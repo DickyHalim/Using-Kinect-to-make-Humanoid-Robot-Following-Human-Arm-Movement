@@ -1,0 +1,36 @@
+﻿<Window x:Class="SkeletalTracking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="990" Loaded="Window_Loaded" 
+        xmlns:Controls="clr-namespace:Coding4Fun.Kinect.Wpf.Controls;assembly=Coding4Fun.Kinect.Wpf"
+        xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" 
+        Closing="Window_Closing" >
+    <Grid x:Name="theGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="649*" />
+            <ColumnDefinition Width="319*" />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+        <Canvas Background="Transparent" Height="561" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Slider Canvas.Left="707" Canvas.Top="524" Height="29" Name="slider1" Width="212" Maximum="27" Minimum="-27" ValueChanged="slider1_ValueChanged" />
+            <Label Canvas.Left="932" Canvas.Top="523" Content="0" Height="32" Name="Degree" Width="30" />
+            <Button Canvas.Left="551" Canvas.Top="523" Content="Adjust Kinect Angle" Height="31" Name="btnangle" Width="148" Click="btnangle_Click" />
+            <TextBlock Canvas.Left="366" Canvas.Top="502" Height="48" Name="textBlock11" Text="TextBlock" Background="White" Foreground="White" Width="146" />
+            <Ellipse Height="80" Width="80" x:Name="LeftHand" Canvas.Left="741" Canvas.Top="57">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/SkeletalTracking;component/Resources/hand.png" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="80" Width="80" Name="Head" Canvas.Left="495" Canvas.Top="20" Fill="#FFFF00C5" />
+
+            <my:KinectSensorChooser Canvas.Left="112" Canvas.Top="286" Name="kinectSensorChooser1" Width="693" Height="211" />
+            <TextBlock x:Name="TextInstructions" Height="80" TextWrapping="Wrap" Canvas.Top="20" Width="448" FontSize="36"><Run Text="Instruction"/><LineBreak/><Run/></TextBlock>
+            <Ellipse Height="80" Width="80" x:Name="RightHand" Canvas.Left="839" Canvas.Top="95">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Resources/hand.png" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock x:Name="TextInstructions4" Height="80" TextWrapping="Wrap" Canvas.Top="301" Width="448" FontSize="36"><Run Text="Instruction"/><LineBreak/><Run/></TextBlock>
+        </Canvas>
+    </Grid>
+</Window>
